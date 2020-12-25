@@ -9,6 +9,10 @@ est=$((c-2))
 color=0
 tput setaf 2; tput bold
 
+# Star of Bethlehem 
+# $c : center  of the tree
+tput cup $((lin - 1)) $c; echo -n \⭐
+
 # Tree
 for ((i=1; i<20; i+=2))
 {
@@ -32,8 +36,11 @@ for ((i=1; i<=2; i++))
 new_year=$(date +'%Y')
 let new_year++
 tput setaf 1; tput bold
-tput cup $lin $((c - 6)); echo MERRY CHRISTMAS Chu
+
+# name time poem
+tput cup $lin $((c - 6)); echo MERRY CHRISTMAS Chu 
 tput cup $((lin + 1)) $((c - 7)); echo And GOOD LUCK in $new_year
+tput cup $((lin + 2)) $((c - 15)); echo Hang A Shining Star Upon The Highest Bow
 let c++
 k=1
 
@@ -58,7 +65,7 @@ while true; do
         base_pair=("A" "T" "C" "G")
         # generate random number in ranage 0-3(array index)
         bp=$(($RANDOM % 4))
-        # use random index to get ele of array    
+        # use random index to get the ele of array    
         echo ${base_pair[$bp]}
             
         line[$k$i]=$li
@@ -71,7 +78,7 @@ while true; do
             tput cup $((lin+1)) $((c+sh))
             echo $l
             let sh++
-            sleep 0.01
+            sleep 0.02
         done
     }
     k=$((k % 2 + 1))
