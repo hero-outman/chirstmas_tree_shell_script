@@ -1,13 +1,13 @@
 #!/bin/bash
-trap "tput reset; tput cnorm; exit" 2
-clear
-tput civis
-lin=2
+trap "tput reset; tput cnorm; exit" 2 # trap: dosomething signal; tput reset: reset terminal; tput cnorm: normal cursor
+clear # clear screen
+tput civis # cursor invisible
+lin=2 # line number
 col=$(($(tput cols) / 2))
 c=$((col-1))
 est=$((c-2))
 color=0
-tput setaf 2; tput bold
+tput setaf 2; tput bold # setaf <value>: Set foreground color; tput bold: bold
 
 # Star of Bethlehem 
 # $c : center  of the tree
